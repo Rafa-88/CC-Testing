@@ -30,7 +30,6 @@ Feature: TC 01 Verificar que un usuario pueda crear una cuenta nueva en el siste
 
 
 
-
 #  Scenario Outline: TC 1.2 Successful login with valid credentials
 #    And The user gets <title> as a title
 #    When The user enters emailAdress in the emailBox
