@@ -27,7 +27,7 @@ Feature: TC 01 Verificar que un usuario pueda crear una cuenta nueva en el siste
     Then El usuario escribe el TelCasa2 en el cuadro de TelefonoCasaSegundoTutor
     Then El usuario escribe el emailSegundoTutor en el cuadro de EmailSegundoTutor
     Then El usuario selecciona la casilla de TerminosYcondiciones
-    And El usuario hace click en el botón de Cancelar
+
 
 
 
