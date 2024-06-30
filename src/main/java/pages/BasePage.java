@@ -11,6 +11,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 import utilities.ReadXLSdata;
 
 import java.io.FileReader;
@@ -18,7 +19,7 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
-public class BasePage extends ReadXLSdata {
+public class BasePage {
 
     protected static WebDriver driver;
     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -75,7 +76,7 @@ public class BasePage extends ReadXLSdata {
         String element = locatorFileLoad(locator);
         Find(element).click();
     }
-
+    @Test(dataProviderClass= ReadXLSdata.class,dataProvider = "xlsdemo")
     public void write(String keysToSend, String locator) throws IOException {
         String element = locatorFileLoad(locator);
         scrollToElement(element);
