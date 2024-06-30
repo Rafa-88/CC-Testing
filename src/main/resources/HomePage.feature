@@ -8,7 +8,7 @@ Feature: TC 02 Navegación de la Página Web de Camper Control
     And El usuario es dirigido a la página con el título de Camper Control
 
   Scenario: TC 2.2 Hacer login exitoso con credenciales válidas
-    When El usuario escribe el correo en el cuadro de Email
+    When El usuario escribe su correo en el cuadro de Email
     And El usuario escribe el password en el cuadro de EnterPassword
 #    And El usuario hace click en el botón de LogIn
 #    And El usuario es dirigido a la página de Dashboard

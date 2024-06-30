@@ -76,23 +76,19 @@ public class BasePage {
         String element = locatorFileLoad(locator);
         Find(element).click();
     }
-    @Test(dataProviderClass= ReadXLSdata.class,dataProvider = "xlsdemo")
-    public void write(String keysToSend, String locator) throws IOException {
-        String element = locatorFileLoad(locator);
-        scrollToElement(element);
-        String text = configFileLoad(keysToSend);
-        Find(element).sendKeys(text);
-    }
 
-    public void writePassword(String keysToSend, String locator) throws IOException {
+    @Test(dataProviderClass = ReadXLSdata.class, dataProvider = "xlsdemo")
+    public void writeEmail(String username) {
+        driver.findElement(By.xpath("//input[@id='email']")).sendKeys(username);
+
+        //scrollToElement(element);
+
+    }
+    @Test(dataProviderClass = ReadXLSdata.class, dataProvider = "xlsdemo")
+    public void writePassword(String locator, String password) throws IOException {
         String element = locatorFileLoad(locator);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        WebElement passwordBox = driver.findElement(By.xpath(element));
-        js.executeScript("arguments[0].style.display='block'; arguments[0].style.visibility='visible'; arguments[0].focus();", passwordBox);
-        wait.until(ExpectedConditions.visibilityOf(passwordBox));
-        wait.until(ExpectedConditions.elementToBeClickable(passwordBox));
-        Actions actions = new Actions(driver);
-        actions.moveToElement(passwordBox).click().sendKeys(configFileLoad(keysToSend)).perform();
+        driver.findElement(By.xpath(element)).sendKeys(password);
+
     }
 
     public void clearText(String locator) throws IOException {

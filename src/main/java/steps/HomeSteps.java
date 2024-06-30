@@ -29,14 +29,14 @@ public class HomeSteps {
         landingPage.verifyPageTitle(title);
     }
 
-    @When("^El usuario escribe el (.+) en el cuadro de (.+)$")
-    public void writeText(String keysToSend, String locator) throws IOException {
-        landingPage.write(keysToSend, locator);
+    @When("^El usuario escribe su correo en el cuadro de Email$")
+    public void writeText(String username) {
+        landingPage.writeEmail(username);
     }
 
-    @When("^The users password is (.+) in the (.+)$")
-    public void writePasswordText(String keysToSend, String locator) throws IOException {
-        landingPage.writePassword(keysToSend, locator);
+    @When("^El usuario escribe el password en el cuadro de (.+)$")
+    public void writePasswordText(String password, String locator) throws IOException {
+        landingPage.writePassword(password, locator);
     }
 
     @Then("^El usuario es dirigido a la sección de (.+)$")
